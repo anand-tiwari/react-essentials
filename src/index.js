@@ -6,12 +6,12 @@ import ReactDom from 'react-dom';
 
 import React from 'react'
 import { render } from 'react-dom'
-import { goodbye, hello } from './lib'
+import { SkiDayCount } from './components/SkiDayCount'
+
+// sometimes react not defined error occurs to capture this event
+window.React = React
 
 render(
-	<div>
-		{hello}
-		{goodbye}
-	</div>,
+	<SkiDayCount />,
 	document.getElementById('react-container')
 )

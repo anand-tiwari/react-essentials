@@ -1,0 +1,13 @@
+.total-days{
+	width:100%;
+}
+
+.powder-days, .backcountry-days{
+	width:50%;
+}
+
+.powder-days, .backcountry-days, .total-days{
+	float:left;
+	text-align:center;
+	padding:30px 0;
+}
