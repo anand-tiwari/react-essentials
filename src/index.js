@@ -1,18 +1,17 @@
-// const { render } = require('react-dom');
-const ReactDOM = require('react-dom');
+/*
+const ReactDom = require('react-dom');
 const React = require('react');
+import ReactDom from 'react-dom';
+*/
 
-const style = {
-	backgroundColor: 'orange',
-	color: 'white',
-	fontFamily: 'verdana'
-}
+import React from 'react'
+import { render } from 'react-dom'
+import { goodbye, hello } from './lib'
 
-ReactDOM.render(
-	<h1 id="title"
-		className = 'header'
-		style={style} >
-		Hello Anand !
-	</h1>,
+render(
+	<div>
+		{hello}
+		{goodbye}
+	</div>,
 	document.getElementById('react-container')
 )
