@@ -43,7 +43,7 @@ import Calendar from 'react-icons/lib/fa/calendar'
 })*/
 
 
-/* React component class */
+/* React ES6 component class */
 /*export class SkiDayCount extends React.Component{
 	percentToDecimal(decimal){
 		return ( (decimal*100) + '%');
@@ -157,6 +157,15 @@ export const SkiDayCount = ({total, powder, backcountry, goal}) => (
 		</div>
 	</div>
 )
+
+
+SkiDayCount.defaultProps =  {
+	total: 50,
+	powder: 50,
+	backcountry:15,
+	goal:100
+}
+
 /* end of stateless component */
 
 
