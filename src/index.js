@@ -2,16 +2,23 @@ import React from 'react';
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { App } from './components/App-ES6';
-// import routes from './routes';
 
+
+// import routes from './routes';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 import {
-  BrowserRouter as Router,
+  browserHistory,
+  Router,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router';
 
 import { Whoops404 } from './components/Whoops404';
+
+import  configureStore from './store/configureStore';
+
+const store = configureStore();
 
 window.React = React
 
@@ -22,8 +29,8 @@ window.React = React
 */
 
 render(
-	<Provider>
-	 <Router>
+	<Provider store={store}>
+	 <Router history={browserHistory} >
 	    <div>
 	      <ul>
 	        <li><Link to="/">Home</Link></li>
