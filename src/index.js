@@ -1,66 +1,44 @@
-/*
-const ReactDom = require('react-dom');
-const React = require('react');
-import ReactDom from 'react-dom';
-*/
-
-import React from 'react'
+import React from 'react';
 import { render } from 'react-dom'
-// import { SkiDayCount } from './components/SkiDayCount'
-// import { SkiDayCount } from './components/SkiDayCount-createClass'
-// import { SkiDayCount } from './components/SkiDayCount-ES6'
-// import { SkiDayCount } from './components/SkiDayCount-ES6-Stateless'
-// import { SkiDayList } from './components/SkiDayList'
-// import { App } from './components/App'
-import { App } from './components/App-ES6'
+import { Provider } from 'react-redux'
+import { App } from './components/App-ES6';
+// import routes from './routes';
 
 
-// sometimes react not defined error occurs to capture this event
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+import { Whoops404 } from './components/Whoops404';
+
 window.React = React
 
 /*render(
-	<SkiDayList days={
-		[
-			{
-				resort: "Squaw Valley",
-				date: new Date("1/2/2017"),
-				powder: true,
-				backcountry: false
-			},
-			{
-				resort: "kirkwood",
-				date: new Date("3/28/2017"),
-				powder: false,
-				backcountry: false
-			},
-			{
-				resort: "Mt. Tallac",
-				date: new Date("4/2/2017"),
-				powder: false,
-				backcountry: true
-			}
-		]	
-	} />,
-	document.getElementById('react-container')
-)*/
-
-render(
 	<App />,
 	document.getElementById('react-container')
 )
+*/
 
-/* For default props */
-/*render(
-	<SkiDayCount/>,
-	document.getElementById('react-container')
-)*/
+render(
+	<Provider>
+	 <Router>
+	    <div>
+	      <ul>
+	        <li><Link to="/">Home</Link></li>
+	        <li><Link to="/about">About</Link></li>
+	        <li><Link to="/topics">Topics</Link></li>
+	      </ul>
 
-/*render(
-	<SkiDayCount total={50}
-					powder={20}
-					backcountry={10}
-					goal={100} />,
-	document.getElementById('react-container')
-)*/
+	      <hr/>
 
+	      <Route exact path="/" component={App}/>
+	      <Route path="/about" component={App}/>
+	      <Route path="/topics" component={App}/>
+	    </div>
+	  </Router>
+	  </Provider>,
+		document.getElementById('react-container')
+);
 
